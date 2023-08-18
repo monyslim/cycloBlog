@@ -18,6 +18,7 @@ pipeline{
                         docker run -d -p 80:80 cycloblog:1
                         docker stop cycloblog:1
                         docker rm cycloblog:1
+                        docker compose up -d
                         echo '-------------done------------'
                '''
             }
@@ -26,8 +27,7 @@ pipeline{
 
             steps{
                 sh '''
-                        echo "production"
-                        docker compose up -d
+                
                    '''     
             }
         }
