@@ -3,7 +3,7 @@ version: "3.1"
 services:
 
   cycloblog:
-    image: monyslim/cycloblog:1
+    image: cycloblog:1
     restart: always
     depends_on:
       - mysql
