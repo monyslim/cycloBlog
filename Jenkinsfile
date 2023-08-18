@@ -13,10 +13,10 @@ pipeline{
                 sh '''
                         ## get the project
                         cd /home/david/cycloBlog
-                        docker build -t cycloblog:1 .
+                        docker build -t --name test-cycloblog cycloblog:1 .
                         docker run -d -p 80:80 cycloblog:1
-                        docker stop 22cdd1792707
-                        docker rm 22cdd1792707
+                        docker stop test-cycloblog
+                        docker rm test-cycloblog
                         docker compose up -d
                         echo '-------------done------------'
                '''
