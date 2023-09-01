@@ -27,7 +27,7 @@ services:
       MYSQL_DATABASE: blog_db
 
   phpmyadmin:
-    image: phpmyadin:latest
+    image: phpmyadmin:latest
     restart: always
     container_name: phpmyadmin-1
     depends_on:
