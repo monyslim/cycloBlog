@@ -18,6 +18,7 @@ pipeline{
                         docker stop testblog
                         docker rm testblog
                         docker compose up -d
+                        docker compose down
                         echo '-------------done------------'
                '''
             }
