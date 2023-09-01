@@ -11,7 +11,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 80:80
+      - "80:80"
 
   mysql:
     image: mysql:5.7
@@ -20,7 +20,7 @@ services:
     networks:
       - cycloblog-network
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       MYSQL_ROOT_USERNAME: root
       MYSQL_ROOT_PASSWORD: password
@@ -30,6 +30,8 @@ services:
     image: phpmyadin:latest
     restart: always
     container_name: phpmyadmin-1
+    depends_on:
+      - mysql
     networks:
       - cycloblog-network
     ports:
