@@ -3,9 +3,11 @@ version: "3.1"
 services:
 
   cycloblog:
-    image: cycloblog:1
+    image: monyslim/cycloblog:1
     restart: always
     container_name: cycloblog-1
+    networks:
+      - cycloblog-network
     depends_on:
       - mysql
     ports:
@@ -15,11 +17,30 @@ services:
     image: mysql:5.7
     restart: always
     container_name: mysql-1
+    networks:
+      - cycloblog-network
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_USERNAME: root
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: blog_db
+
+  phpmyadmin:
+    image: phpmyadin:latest
+    restart: always
+    container_name: phpmyadmin-1
+    networks:
+      - cycloblog-network
+    ports:
+      - "801:80"
+    environment:
+      PMA_PASSWORD: password
+      PMA_PORT: 3306
+      PMA_ARBITTARY: 1
+
+networks:
+  cycloblog-network:
+    driver: bridge
    
 
