@@ -1,7 +1,7 @@
 <?php
 
 //config
-define('BASE_URL', 'http://CycloBlog/');
+define('BASE_URL', 'http://localhost/Cycloblog/');
 
 function redirect($url) 
 {    
