@@ -15,8 +15,8 @@ pipeline{
                         cd /home/david/cycloBlog
                         docker build -t cycloblog:1 .
                         docker run -d  --name cycloblog -p 80:80 cycloblog:1
-                        docker stop testblog
-                        docker rm testblog
+                        docker stop cycloblog
+                        docker rm cycloblog
                         echo '-------------done------------'
                '''
             }
